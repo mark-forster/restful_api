@@ -1,0 +1,49 @@
+###
+GET http://localhost:8000/api/localhost:8000/api/addPost
+
+
+###
+POST http://localhost:8000/api/addPost
+    Content-Type: application/json
+    
+    {
+        "title":"Django",
+        "content":"This is Django"
+    }
+
+
+###
+PATCH  http://localhost:8000/api/editPost/6403231e326931c9ec9297c7
+    Content-Type: application/json
+
+    {
+        "title":"ExpressJs",
+        "content":"This is ExpressJs"
+       
+    }
+
+###
+DELETE  http://localhost:8000/api/deletePost/6403231e326931c9ec9297c7
+    Content-Type: application/json
+
+# Authentication
+###
+POST http://localhost:8000/api/signUp
+Content-Type: application/json
+
+{
+    "name":"marforster",
+    "email":"a@gmail.com",
+    "password":"mark2022.a@t"
+}
+
+###
+POST http://localhost:8000/api/login
+Content-Type: application/json
+
+{
+    "name":"markforster",
+    "email":"a@gmail.com",
+    "password":"mark2022.a@t"
+}
+###
