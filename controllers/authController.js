@@ -3,6 +3,7 @@ const bcrypt=require('bcrypt');
 const jwt=require('jsonwebtoken');
 const{userSchema}=require('../validations/user');
 
+
 const addUser=async (req,res)=>{
     try{
         //get user Input
@@ -64,7 +65,13 @@ const login=async (req,res)=>{
                                 );
                                 // save user token
                                 user.token = token;
-                            res.status(200).json({message:user,token});
+                                const resultUser={
+                                    name:user.name,
+                                    email:user.email,
+                                    password:user.password,
+                                    token:user.token
+                                }
+                            res.status(200).json({message:resultUser});
                             })
                             .catch(err=>{
                                 res.send('passworddoesnot match')

@@ -2,6 +2,8 @@ const dotenv=require('dotenv');
 dotenv.config();
 const port=process.env.PORT;
 const db_url=process.env.DATABASE_URL;
+//middleware
+const auth=require('./middleware/auth');
 //route
 const postRoute=require('./routes/post');
 const authRoute=require('./routes/user');
